@@ -1,0 +1,47 @@
+# 리스트, 튜플, 딕셔너리와 zip() 함수
+
+names = ['kim', 'hong', 'lee', 'choi']
+foods = ['오뎅', '라면', '순대국', '파스타', '피자']
+drinks = ['사이다', '콜라', '커피', '홍차']
+
+pair1 = list(zip(names, foods))
+print(pair1)
+# [('kim', '오뎅'), ('hong', '라면'), ('lee', '순대국'), ('choi', '파스타')]
+
+pair2 = dict(zip(names, foods))
+print(pair2)
+# {'kim': '오뎅', 'hong': '라면', 'lee': '순대국', 'choi': '파스타'}
+
+
+# 리스트 컴프리헨션
+
+num_list = [num for num in range(1, 11) if num %2 ==0]
+print(num_list)
+
+num_list2 = [x+y for x in range(10) for y in range(10)]
+print(num_list2)
+
+list3 = [(x,y) for x in ['커피', '우유', '콜라'] for y in ['사과', '바나나', '딸기', '키위']]
+print(list3)
+
+# 세트 컴프리헨션
+num_3 = {x+y for x in range(10) for y in range(10)}
+print(num_3)
+
+# 딕셔너리 컴프리헨션
+stds = ['철수','영희','길동','순희']
+dict_std = { std:0 for std in stds }
+print(dict_std)
+
+scores = [50, 60, 90, 80]
+dict_std2 = dict(zip(stds, scores))
+print(dict_std2)
+dict_std3 ={n:s for n,s in dict_std2.items() if s >=60}
+print(dict_std3)
+dict_std4 ={n:s for n,s in dict_std2.items() if n !='길동'}
+print(dict_std4)
+dict_std5 ={n:'P' if s >=60 else 'F' for n,s in dict_std2.items()}
+print(dict_std5)
+
+list4 =['P' if s >=60 else 'F' for n,s in dict_std2.items()]
+print(list4)
